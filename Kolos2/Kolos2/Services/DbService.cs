@@ -108,7 +108,7 @@ public class DbService : IDbService
         return character;
     }
 
-    public async Task<bool> AddItemsAndUpdateWeightAsync(Characters character, List<int> itemIds)
+    public async Task<int> AddItemsAndUpdateWeightAsync(Characters character, List<int> itemIds)
     {
         var items = await _context.Items
             .Where(i => itemIds.Contains(i.Id))
@@ -140,9 +140,7 @@ public class DbService : IDbService
              }
         }
 
-         var c = await _context.SaveChangesAsync();
-
-         return true;
+         return await _context.SaveChangesAsync();
     }
 
     public async Task<List<BackpacksResponse>?> GetUpdatedBackpackAsync(int characterId)

@@ -15,6 +15,6 @@ public interface IDbService
     
     Task<Characters?> CheckIfCharacterHasEnoughWeight(int characterId, List<int> itemIds);
     
-    Task<bool> AddItemsAndUpdateWeightAsync(Characters character, List<int> itemIds);
+    Task<int> AddItemsAndUpdateWeightAsync(Characters character, List<int> itemIds);
     Task<List<BackpacksResponse>?> GetUpdatedBackpackAsync(int characterId);
 }

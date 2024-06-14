@@ -48,9 +48,9 @@ public class CharactersController : ControllerBase
             return BadRequest("Items weight exceeds character's weight");
         }
 
-        if (! await _dbService.AddItemsAndUpdateWeightAsync(character, itemIds))
+        if (await _dbService.AddItemsAndUpdateWeightAsync(character, itemIds) == 0)
         {
-            return BadRequest("Error while adding items to character's backpack");
+            return Ok("No items were added");
         }
 
         var newBackpacks = await _dbService.GetUpdatedBackpackAsync(characterId);

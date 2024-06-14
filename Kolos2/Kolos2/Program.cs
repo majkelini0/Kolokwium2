@@ -11,7 +11,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 
-//builder.Services.AddScoped<IDbService, DbService>();
+builder.Services.AddScoped<IDbService, DbService>();
 
 builder.Services.AddDbContext<KolosContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));

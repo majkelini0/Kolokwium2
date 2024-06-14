@@ -172,7 +172,7 @@ public partial class KolosContext : DbContext
         //     {
         //         CharacterId = 1,
         //         ItemId = 1,
-        //         Amount = 1
+        //         Amount = 2
         //     },
         //     new Backpacks
         //     {
